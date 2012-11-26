@@ -9,7 +9,11 @@ parseCon :: String -> Either ParseError Program
 parseCon input = parse translate "" input
 
 translate :: Parser Program
-translate = fmap Program (many def)
+translate =  do L.whiteSpace
+                prgm <- fmap Program (many def)
+                eof
+                return prgm
+         <?> "program"
 
 term :: Parser Term
 term =  fmap Variable identifier

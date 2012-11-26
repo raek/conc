@@ -1,7 +1,9 @@
-let ANSWER = 42
 
-let main = \() ->
+def ANSWER "=" 42
+
+def main "=" \() ->
     printAnswer exit
 
-let printAnswer = \(k) ->
+def printAnswer "=" \(k) ->
     print ANSWER k
+
