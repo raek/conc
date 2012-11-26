@@ -1,0 +1,7 @@
+let ANSWER = 42
+
+let main = \() ->
+    printAnswer exit
+
+let printAnswer = \(k) ->
+    print ANSWER k
