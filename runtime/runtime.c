@@ -92,5 +92,17 @@ void *env_lookup(Env *env, char *key)
   return NULL;
 }
 
+Number *create_number(int i)
+{
+  Number *n;
 
+  n = (Number*) malloc(sizeof(Number));
+  init_ref_count(&n->ref_count, free_number);
+  n->value = i;
+  return n;
+}
 
+void free_number(void *number)
+{
+  free(number);
+}
