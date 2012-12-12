@@ -22,7 +22,7 @@ void ref_count_release(RefCountable *ref_countable)
 
   ref_count = &ref_countable->ref_count;
   ref_count->count -= 1;
-  if (ref_count == 0)
+  if (ref_count->count == 0)
     {
       ref_count->free_fn(ref_countable);
     }
